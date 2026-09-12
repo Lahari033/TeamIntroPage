@@ -41,7 +41,7 @@
 
         /* Main */
         .profile-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 60px auto;
             padding: 0 20px;
         }
@@ -72,10 +72,9 @@
         /* Profile Card */
         .profile-card {
             background: white;
-            width: 500px;
+            width: 350px;
             border-radius: 20px;
             overflow: hidden;
-            display: flex;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
             transition: 0.3s ease;
         }
@@ -85,54 +84,56 @@
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
         }
 
-        /* Left Section */
-        .profile-left {
-            width: 40%;
+        /* Top Profile Section */
+        .profile-top {
             background: linear-gradient(160deg, #7c3aed, #4f46e5);
             color: white;
             padding: 35px 20px;
             text-align: center;
         }
 
-        .profile-left.game {
+        .profile-top.game {
             background: linear-gradient(160deg, #ec4899, #7c3aed);
         }
 
-        .profile-left img {
-            width: 125px;
-            height: 125px;
+        .profile-top.java {
+            background: linear-gradient(160deg, #f97316, #dc2626);
+        }
+
+        .profile-top img {
+            width: 135px;
+            height: 135px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid white;
             margin-bottom: 18px;
         }
 
-        .profile-left h3 {
-            font-size: 22px;
+        .profile-top h3 {
+            font-size: 24px;
             margin-bottom: 7px;
         }
 
-        .profile-left p {
-            font-size: 14px;
+        .profile-top p {
+            font-size: 15px;
             opacity: 0.9;
         }
 
         .employee-type {
             display: inline-block;
-            margin-top: 20px;
-            padding: 7px 12px;
+            margin-top: 18px;
+            padding: 7px 14px;
             border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 20px;
             font-size: 12px;
         }
 
-        /* Right Section */
-        .profile-right {
-            width: 60%;
+        /* Profile Details */
+        .profile-details {
             padding: 30px;
         }
 
-        .profile-right h4 {
+        .profile-details h4 {
             font-size: 21px;
             color: #111827;
             margin-bottom: 10px;
@@ -141,21 +142,20 @@
         .intro {
             color: #64748b;
             font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.7;
+            margin-bottom: 22px;
         }
 
         /* Information */
         .info {
             display: grid;
-            grid-template-columns: 1fr;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .info-box {
             background: #f8fafc;
-            padding: 12px;
+            padding: 13px;
             border-radius: 10px;
             border-left: 4px solid #6366f1;
         }
@@ -214,16 +214,7 @@
 
             .profile-card {
                 width: 100%;
-                flex-direction: column;
-            }
-
-            .profile-left,
-            .profile-right {
-                width: 100%;
-            }
-
-            .profile-left {
-                padding: 30px;
+                max-width: 400px;
             }
         }
     </style>
@@ -243,7 +234,9 @@
 
         <div class="page-title">
             <h2>Meet Our Team</h2>
-            <p>Meet the creative minds behind our digital products.</p>
+            <p>
+                Meet the creative minds behind our digital products.
+            </p>
         </div>
 
 
@@ -252,7 +245,7 @@
             <!-- Pendli Lahari -->
             <div class="profile-card">
 
-                <section class="profile-left">
+                <section class="profile-top">
 
                     <img
                         src="https://randomuser.me/api/portraits/women/65.jpg"
@@ -270,7 +263,7 @@
                 </section>
 
 
-                <section class="profile-right">
+                <section class="profile-details">
 
                     <h4>About Lahari</h4>
 
@@ -280,7 +273,6 @@
                         on transforming user needs into simple and beautiful
                         interfaces.
                     </p>
-
 
                     <div class="info">
 
@@ -301,10 +293,7 @@
 
                     </div>
 
-
-                    <h5 class="skills-title">
-                        Core Skills
-                    </h5>
+                    <h5 class="skills-title">Core Skills</h5>
 
                     <div class="skills">
                         <span class="skill">Figma</span>
@@ -324,7 +313,7 @@
             <!-- Vamshi -->
             <div class="profile-card">
 
-                <section class="profile-left game">
+                <section class="profile-top game">
 
                     <img
                         src="https://randomuser.me/api/portraits/men/75.jpg"
@@ -342,17 +331,16 @@
                 </section>
 
 
-                <section class="profile-right">
+                <section class="profile-details">
 
                     <h4>About Vamshi</h4>
 
                     <p class="intro">
                         Game developer passionate about creating immersive
-                        gameplay experiences. Enjoys building game mechanics,
+                        gameplay experiences. Enjoys developing game mechanics,
                         interactive environments, and engaging player
                         experiences using modern game development tools.
                     </p>
-
 
                     <div class="info">
 
@@ -373,10 +361,7 @@
 
                     </div>
 
-
-                    <h5 class="skills-title">
-                        Core Skills
-                    </h5>
+                    <h5 class="skills-title">Core Skills</h5>
 
                     <div class="skills">
                         <span class="skill">Unity</span>
@@ -386,6 +371,74 @@
                         <span class="skill">Animation</span>
                         <span class="skill">Game Physics</span>
                         <span class="skill">Level Design</span>
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- Vasavi -->
+            <div class="profile-card">
+
+                <section class="profile-top java">
+
+                    <img
+                        src="https://randomuser.me/api/portraits/women/48.jpg"
+                        alt="Vasavi"
+                    >
+
+                    <h3>Vasavi</h3>
+
+                    <p>Java Developer</p>
+
+                    <span class="employee-type">
+                        Software Engineering
+                    </span>
+
+                </section>
+
+
+                <section class="profile-details">
+
+                    <h4>About Vasavi</h4>
+
+                    <p class="intro">
+                        Java developer interested in building robust and
+                        maintainable software applications. Enjoys working
+                        with backend technologies, developing APIs, and
+                        solving programming problems with clean code.
+                    </p>
+
+                    <div class="info">
+
+                        <div class="info-box">
+                            <small>Department</small>
+                            <strong>Software Engineering</strong>
+                        </div>
+
+                        <div class="info-box">
+                            <small>Primary Technology</small>
+                            <strong>Java</strong>
+                        </div>
+
+                        <div class="info-box">
+                            <small>Focus Area</small>
+                            <strong>Backend Development</strong>
+                        </div>
+
+                    </div>
+
+                    <h5 class="skills-title">Core Skills</h5>
+
+                    <div class="skills">
+                        <span class="skill">Java</span>
+                        <span class="skill">Spring Boot</span>
+                        <span class="skill">REST APIs</span>
+                        <span class="skill">MySQL</span>
+                        <span class="skill">JDBC</span>
+                        <span class="skill">Git</span>
+                        <span class="skill">OOP</span>
                     </div>
 
                 </section>
