@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pendli Lahari | Team Introduction</title>
+    <title>TechNova | Team Introduction</title>
 
     <style>
         * {
@@ -39,124 +39,163 @@
             color: #cbd5e1;
         }
 
-        /* Main Profile */
+        /* Main */
         .profile-container {
-            max-width: 950px;
-            margin: 70px auto;
+            max-width: 1100px;
+            margin: 60px auto;
             padding: 0 20px;
         }
 
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title h2 {
+            font-size: 32px;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #64748b;
+        }
+
+        /* Team */
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Profile Card */
         .profile-card {
             background: white;
+            width: 500px;
             border-radius: 20px;
             overflow: hidden;
             display: flex;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+            transition: 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
         }
 
         /* Left Section */
         .profile-left {
-            width: 38%;
+            width: 40%;
             background: linear-gradient(160deg, #7c3aed, #4f46e5);
             color: white;
-            padding: 45px 30px;
+            padding: 35px 20px;
             text-align: center;
         }
 
-        .profile-left img {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid white;
-            margin-bottom: 25px;
+        .profile-left.game {
+            background: linear-gradient(160deg, #ec4899, #7c3aed);
         }
 
-        .profile-left h2 {
-            font-size: 28px;
-            margin-bottom: 8px;
+        .profile-left img {
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 18px;
+        }
+
+        .profile-left h3 {
+            font-size: 22px;
+            margin-bottom: 7px;
         }
 
         .profile-left p {
-            font-size: 16px;
+            font-size: 14px;
             opacity: 0.9;
         }
 
         .employee-type {
             display: inline-block;
-            margin-top: 25px;
-            padding: 8px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 25px;
-            font-size: 13px;
+            margin-top: 20px;
+            padding: 7px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            font-size: 12px;
         }
 
         /* Right Section */
         .profile-right {
-            width: 62%;
-            padding: 45px;
+            width: 60%;
+            padding: 30px;
         }
 
-        .profile-right h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
+        .profile-right h4 {
+            font-size: 21px;
             color: #111827;
+            margin-bottom: 10px;
         }
 
         .intro {
             color: #64748b;
-            line-height: 1.7;
-            margin-bottom: 30px;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         /* Information */
         .info {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .info-box {
             background: #f8fafc;
-            padding: 18px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 10px;
             border-left: 4px solid #6366f1;
         }
 
         .info-box small {
             display: block;
             color: #64748b;
-            margin-bottom: 6px;
+            font-size: 11px;
+            margin-bottom: 4px;
         }
 
         .info-box strong {
+            font-size: 13px;
             color: #1e293b;
         }
 
         /* Skills */
         .skills-title {
-            margin-bottom: 15px;
-            font-size: 20px;
+            font-size: 17px;
+            margin-bottom: 12px;
         }
 
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 7px;
         }
 
         .skill {
             background: #ede9fe;
             color: #5b21b6;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 13px;
+            padding: 6px 10px;
+            border-radius: 7px;
+            font-size: 11px;
             font-weight: 600;
         }
 
         /* Footer */
         footer {
+            margin-top: 60px;
             text-align: center;
             background: #111827;
             color: #cbd5e1;
@@ -174,6 +213,7 @@
             }
 
             .profile-card {
+                width: 100%;
                 flex-direction: column;
             }
 
@@ -182,12 +222,8 @@
                 width: 100%;
             }
 
-            .profile-right {
+            .profile-left {
                 padding: 30px;
-            }
-
-            .info {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -202,89 +238,159 @@
     </header>
 
 
-    <!-- Employee Profile -->
+    <!-- Main Content -->
     <main class="profile-container">
 
-        <div class="profile-card">
-
-            <!-- Profile Image and Basic Details -->
-            <section class="profile-left">
-
-                <img 
-                    src="https://randomuser.me/api/portraits/women/65.jpg"
-                    alt="Pendli Lahari"
-                >
-
-                <h2>Pendli Lahari</h2>
-
-                <p>UI/UX Developer</p>
-
-                <span class="employee-type">
-                    Product Design Team
-                </span>
-
-            </section>
+        <div class="page-title">
+            <h2>Meet Our Team</h2>
+            <p>Meet the creative minds behind our digital products.</p>
+        </div>
 
 
-            <!-- Employee Information -->
-            <section class="profile-right">
+        <div class="team">
 
-                <h3>About Lahari</h3>
+            <!-- Pendli Lahari -->
+            <div class="profile-card">
 
-                <p class="intro">
-                    Creative UI/UX developer passionate about designing
-                    simple, intuitive, and visually engaging digital
-                    experiences. She focuses on understanding user needs
-                    and converting ideas into practical and user-friendly
-                    interfaces.
-                </p>
+                <section class="profile-left">
+
+                    <img
+                        src="https://randomuser.me/api/portraits/women/65.jpg"
+                        alt="Pendli Lahari"
+                    >
+
+                    <h3>Pendli Lahari</h3>
+
+                    <p>UI/UX Developer</p>
+
+                    <span class="employee-type">
+                        Product Design
+                    </span>
+
+                </section>
 
 
-                <!-- Employee Details -->
-                <div class="info">
+                <section class="profile-right">
 
-                    <div class="info-box">
-                        <small>Department</small>
-                        <strong>Product Design</strong>
+                    <h4>About Lahari</h4>
+
+                    <p class="intro">
+                        Creative UI/UX developer passionate about designing
+                        intuitive and engaging digital experiences. Focuses
+                        on transforming user needs into simple and beautiful
+                        interfaces.
+                    </p>
+
+
+                    <div class="info">
+
+                        <div class="info-box">
+                            <small>Department</small>
+                            <strong>Product Design</strong>
+                        </div>
+
+                        <div class="info-box">
+                            <small>Primary Tool</small>
+                            <strong>Figma</strong>
+                        </div>
+
+                        <div class="info-box">
+                            <small>Focus Area</small>
+                            <strong>User Experience</strong>
+                        </div>
+
                     </div>
 
-                    <div class="info-box">
-                        <small>Role</small>
-                        <strong>UI/UX Developer</strong>
+
+                    <h5 class="skills-title">
+                        Core Skills
+                    </h5>
+
+                    <div class="skills">
+                        <span class="skill">Figma</span>
+                        <span class="skill">UI Design</span>
+                        <span class="skill">UX Research</span>
+                        <span class="skill">Wireframing</span>
+                        <span class="skill">Prototyping</span>
+                        <span class="skill">HTML</span>
+                        <span class="skill">CSS</span>
                     </div>
 
-                    <div class="info-box">
-                        <small>Primary Tool</small>
-                        <strong>Figma</strong>
+                </section>
+
+            </div>
+
+
+            <!-- Vamshi -->
+            <div class="profile-card">
+
+                <section class="profile-left game">
+
+                    <img
+                        src="https://randomuser.me/api/portraits/men/75.jpg"
+                        alt="Vamshi"
+                    >
+
+                    <h3>Vamshi</h3>
+
+                    <p>Game Developer</p>
+
+                    <span class="employee-type">
+                        Game Development
+                    </span>
+
+                </section>
+
+
+                <section class="profile-right">
+
+                    <h4>About Vamshi</h4>
+
+                    <p class="intro">
+                        Game developer passionate about creating immersive
+                        gameplay experiences. Enjoys building game mechanics,
+                        interactive environments, and engaging player
+                        experiences using modern game development tools.
+                    </p>
+
+
+                    <div class="info">
+
+                        <div class="info-box">
+                            <small>Department</small>
+                            <strong>Game Development</strong>
+                        </div>
+
+                        <div class="info-box">
+                            <small>Primary Tool</small>
+                            <strong>Unity</strong>
+                        </div>
+
+                        <div class="info-box">
+                            <small>Focus Area</small>
+                            <strong>Gameplay &amp; Interactive Design</strong>
+                        </div>
+
                     </div>
 
-                    <div class="info-box">
-                        <small>Focus Area</small>
-                        <strong>User Experience</strong>
+
+                    <h5 class="skills-title">
+                        Core Skills
+                    </h5>
+
+                    <div class="skills">
+                        <span class="skill">Unity</span>
+                        <span class="skill">C#</span>
+                        <span class="skill">Game Design</span>
+                        <span class="skill">3D Modeling</span>
+                        <span class="skill">Animation</span>
+                        <span class="skill">Game Physics</span>
+                        <span class="skill">Level Design</span>
                     </div>
 
-                </div>
+                </section>
 
-
-                <!-- Skills -->
-                <h4 class="skills-title">
-                    Core Skills
-                </h4>
-
-                <div class="skills">
-
-                    <span class="skill">Figma</span>
-                    <span class="skill">UI Design</span>
-                    <span class="skill">UX Research</span>
-                    <span class="skill">Wireframing</span>
-                    <span class="skill">Prototyping</span>
-                    <span class="skill">HTML</span>
-                    <span class="skill">CSS</span>
-                    <span class="skill">User Research</span>
-
-                </div>
-
-            </section>
+            </div>
 
         </div>
 
